@@ -1,87 +1,129 @@
-# Legal Contract Intelligence Platform
+# ⚖️ Legal Contract Intelligence Platform
 
 An enterprise-style Legal AI platform for contract question answering, clause extraction, risk detection, missing clause analysis, and contract comparison.
 
-Built on top of the CUAD legal contract dataset, this project combines hybrid retrieval with contract analysis agents to turn dense legal text into clear, structured, and actionable outputs.
+Built on top of the CUAD legal contract dataset, this project combines Hybrid Retrieval, Retrieval-Augmented Generation (RAG), and Legal Analysis Agents to transform dense legal contracts into clear, structured, and actionable insights.
 
-## Live Demo
+---
 
-**Streamlit App:** <https://legal-contract-intelligence-platform-4gnq36xirwvyageshtrqcc.streamlit.app/>
+## 🚀 Live Demo
 
-## Key Features
+**Streamlit App:**  
+https://legal-contract-intelligence-platform-4gnq36xirwvyageshtrqcc.streamlit.app/
 
-### Contract Q&A
-Ask legal questions across a large contract corpus and get grounded answers with supporting sources.
+---
 
-Example questions:
+## ✨ Key Features
+
+### 📖 Contract Q&A
+Ask legal questions across a large contract corpus and receive grounded answers with source references.
+
+Example Questions:
 - What confidentiality obligations exist?
 - What governing law provisions exist?
 - What termination rights exist?
 - What force majeure clauses exist?
+- What indemnification obligations exist?
 
-### Contract Analysis
-Upload a single contract and generate:
+---
+
+### 📄 Contract Analysis
+
+Upload a contract and generate:
+
 - Clause Extraction
 - Risk Detection
 - Missing Clause Detection
 - Executive Summary
-- Final Legal Report
+- Comprehensive Legal Report
 
-### Contract Comparison
-Upload two contracts and compare them across:
-- Purpose
+---
+
+### ⚖️ Contract Comparison
+
+Compare two contracts across:
+
+- Contract Purpose
 - Confidentiality
 - Termination
 - Force Majeure
 - Indemnification
 - Governing Law
 - Intellectual Property
-- Assignment
+- Assignment Rights
 - Dispute Resolution
 - Liability Allocation
 
-## How It Works
+The system highlights differences, risks, and recommended improvements.
 
-The platform has two major backend systems:
+---
 
-### 1. RAG Backend
-Used for legal question answering across the contract corpus.
+## 🏗️ System Architecture
 
-It combines:
-- FAISS for semantic retrieval
-- BM25 for keyword retrieval
-- Hybrid fusion
-- LLM reranking
-- Self-RAG style answering
+### 1. Hybrid Legal RAG Engine
 
-### 2. Legal Analysis Backend
-Used for single-contract analysis and comparison.
+Used for contract question answering.
 
-It performs:
-- Clause extraction
-- Risk identification
-- Missing clause detection
-- Summary generation
-- Contract comparison
-- Legal report generation
+Combines:
 
-## Tech Stack
+- FAISS Semantic Search
+- BM25 Keyword Search
+- Hybrid Retrieval
+- LLM-Based Answer Generation
+- Self-RAG Verification
 
-- Python
-- Streamlit
+---
+
+### 2. Legal Analysis Agent
+
+Used for contract review and comparison.
+
+Performs:
+
+- Clause Extraction
+- Risk Identification
+- Missing Clause Detection
+- Contract Summarization
+- Legal Report Generation
+- Contract Comparison
+
+---
+
+## 🛠️ Tech Stack
+
+### AI / LLM
+
+- OpenAI-Compatible Models
+- AWS Bedrock
 - LangChain
-- OpenAI / Bedrock-compatible LLM
+
+### Retrieval
+
 - FAISS
 - BM25
+
+### Application
+
+- Streamlit
+- Python
+
+### Data Processing
+
 - Pandas
 - PyPDF
 - python-docx
-- CUAD dataset
 
-## Project Structure
+### Dataset
+
+- CUAD (Contract Understanding Atticus Dataset)
+
+---
+
+## 📂 Project Structure
 
 ```text
 legal-contract-intelligence-platform/
+│
 ├── app.py
 ├── rag_backend.py
 ├── analysis_backend.py
@@ -89,14 +131,17 @@ legal-contract-intelligence-platform/
 ├── README.md
 ├── LICENSE
 ├── .gitignore
+│
 ├── metadata/
 │   └── contract_type_mapping.csv
+│
 ├── vectorstores/
 │   ├── bm25.pkl
 │   ├── chunks.pkl
 │   └── legal_faiss/
 │       ├── index.faiss
 │       └── index.pkl
+│
 └── notebooks/
     ├── 01_cuad_exploration.ipynb
     ├── 02_legal_rag_baseline.ipynb
@@ -106,3 +151,92 @@ legal-contract-intelligence-platform/
     ├── 06_advanced_retrieval_reranking.ipynb
     ├── 07_hybrid_legal_self_rag.ipynb
     └── 08_legal_contract_analysis_agent.ipynb
+```
+
+---
+
+## ▶️ Run Locally
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/7Ayush-cyber/legal-contract-intelligence-platform.git
+cd legal-contract-intelligence-platform
+```
+
+### Create and Activate a Virtual Environment
+
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
+
+### Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### Create a `.env` File
+
+Create a file named `.env` in the project root directory and add:
+
+```env
+OPENAI_API_KEY=your_api_key_here
+OPENAI_BASE_URL=your_base_url_here
+```
+
+### Run the Application
+
+```bash
+streamlit run app.py
+```
+
+---
+
+## 🎯 Example Use Cases
+
+### Legal Teams
+
+- Contract Review
+- Risk Assessment
+- Clause Discovery
+- Contract Comparison
+
+### Startups
+
+- Vendor Agreement Review
+- NDA Analysis
+- Compliance Checks
+
+### Students & Researchers
+
+- Legal AI Research
+- RAG System Development
+- Agentic Workflow Exploration
+
+---
+
+## 📈 Future Improvements
+
+- Citation-Level Grounding
+- PDF Upload & Analysis
+- Multi-Document Contract Review
+- Export Reports to PDF/Word
+- Legal Dashboard Analytics
+- Advanced Legal Agent Workflows
+- Contract Version Tracking
+
+---
+
+## ⚠️ Disclaimer
+
+This platform is intended for educational and research purposes.
+
+Outputs generated by the system should not be considered legal advice and should always be reviewed by qualified legal professionals.
+
+---
+
+## 📜 License
+
+MIT License
