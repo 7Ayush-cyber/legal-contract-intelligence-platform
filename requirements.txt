@@ -1,0 +1,12 @@
+streamlit
+langchain==0.3.26
+langchain-core==0.3.68
+langchain-community==0.3.27
+langchain-openai==0.3.27
+langchain-huggingface==0.1.2
+faiss-cpu
+rank-bm25
+pandas
+pypdf
+python-docx
+python-dotenv
